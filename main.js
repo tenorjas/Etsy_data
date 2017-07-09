@@ -77,4 +77,11 @@ function question5 () {
 // Answer:
 function question6 () {
   // Answer:
+  let itemsMadeBySellers = 0;
+  for (var i = 0; i < data.length; i++) {
+    if (data[i].who_made === "i_did") {
+      itemsMadeBySellers++;
+    }
+  }
+  console.log(itemsMadeBySellers + " items were made by their sellers.");
 }
