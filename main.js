@@ -13,8 +13,8 @@ function question1 () {
   for (var i = 0; i < data.length; i++) {
     sum = sum + data[i].price;
   }
-  let average = sum / data.length;
-  console.log(average);
+  let average = (sum / data.length).toFixed(2);
+  console.log("The average price is $" + average +".");
 }
 
 
@@ -22,7 +22,8 @@ function question1 () {
 // 2: Show me how to get an array of items that cost between $14.00 and $18.00 USD
 function question2 () {
   // Answer:
-  let itemsInRange = [];
+  let itemsInRange = []; // The question asks for an array of items, so I did an array, not just the name.
+  // I also excluded the item that costs 18 GBP, because that's more than $18 US.
   for (var i = 0; i < data.length; i++) {
     if ((data[i].price >= 14) && (data[i].price <= 18) && (data[i].currency_code === "USD")) {
       itemsInRange.push(data[i]);
@@ -36,6 +37,11 @@ function question2 () {
 // 3: Which item has a "GBP" currency code? Display it's name and price.
 function question3 () {
   // Answer:
+  for (var i = 0; i < data.length; i++) {
+    if (data[i].currency_code === "GBP") {
+      console.log(data[i].title + " costs " + data[i].price + " pounds.");
+    }
+  }
 }
 
 
